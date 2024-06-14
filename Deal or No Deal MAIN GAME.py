@@ -42,7 +42,7 @@ def main():
     # Shuffle the cash amounts and assign them to the suitcases
     suitcase_prices = shuffle_case(NUMBERS,PRICES)
 
-    # hidden_suitcase is a dictionary that tracks the number and cash prizes of unopened suitcase
+    # hidden_suitcase is a dictionary that tracks the number and cash prizes of un-opened suitcase
     hidden_suitcase = suitcase_prices
 
     # open suitcase is a dictionary that tracks the number and cash prizes of opened suitcase
@@ -58,7 +58,7 @@ def main():
     player_num = []
 
     # Binds the mouse click event to the canvas
-    # click_suitcase funbction is the main game function
+    # click_suitcase function is the main game function
     c.bind("<Button-1>", lambda event: click_suitcase(event, c, round, player_num, num_list, suitcase_prices, PRICES, hidden_suitcase, open_suitcase, x, y, dx, dy))
 
 
@@ -150,7 +150,7 @@ def click_suitcase(event, c, round, player_num, num_list, suitcase_prices, PRICE
                 round_rectangle(c, suitcase_x-60, suitcase_y, suitcase_x+140, suitcase_y+150, radius=60, width=7, fill="black", outline="grey70")
                 c.create_text(suitcase_x+40, suitcase_y+75, font=('Arial Bold', 25), text="$"+str(suitcase_prices[num]), fill='white')
 
-                # Grey out the prize from the avaiable prizes
+                # Grey out the prize from the available prizes
                 grey_out_price(c, x, y, dx, dy, PRICES.index(suitcase_prices[num]))
 
                 # Update dictionaries of hidden and open suitcases
@@ -161,7 +161,7 @@ def click_suitcase(event, c, round, player_num, num_list, suitcase_prices, PRICE
                 c.create_text(x+3*dx/2+450, y+25, font=('Arial Bold', 25), text="The banker offers to", fill='black')
                 c.create_text(x+3*dx/2+450, y+75, font=('Arial Bold', 25), text="buy your suitcase for", fill='black')
                 c.create_text(x+3*dx/2+450, y+125, font=('Arial Bold', 25), text="$"+str(banker_offer(PRICES, hidden_suitcase, open_suitcase, player_num)), fill='black')
-                c.create_text(x+3*dx/2+450, y+175, font=('Arial Bold', 25), text="Click deal or no deal.", fill='black')
+                c.create_text(x+3*dx/2+450, y+175, font=('Arial Bold', 25), text="Deal or no deal?", fill='black')
 
                 round.append(1)
                 print("legal game clicks = "+str(len(round)))
