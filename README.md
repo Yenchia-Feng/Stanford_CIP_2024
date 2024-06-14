@@ -3,5 +3,5 @@ Hello and welcome! As part of the Stanford Code in Place 2024, I made a mini-gam
 
 I hope you enjoy playing! :)
 
-- Yenchia Feng
+Yenchia Feng
 
